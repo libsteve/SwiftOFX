@@ -7,9 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		78C12EB75B620B090FDA3F81 /* Pods_SwiftOFXTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E68E9681D0B5552B1E667E15 /* Pods_SwiftOFXTests.framework */; };
+		AA26170A1E7E385900F9A80A /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2617091E7E385900F9A80A /* Token.swift */; };
+		AA26170C1E7E6A7600F9A80A /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA26170B1E7E6A7600F9A80A /* Parser.swift */; };
+		AA55F93D1E79E9E800835E25 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA55F93C1E79E9E800835E25 /* Track.swift */; };
 		AA7AAC021E653F9E00D99296 /* SwiftOFX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA7AABF81E653F9E00D99296 /* SwiftOFX.framework */; };
-		AA7AAC071E653F9E00D99296 /* SwiftOFXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7AAC061E653F9E00D99296 /* SwiftOFXTests.swift */; };
+		AA7AAC071E653F9E00D99296 /* ParserSystemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7AAC061E653F9E00D99296 /* ParserSystemTests.swift */; };
 		AA7AAC091E653F9E00D99296 /* SwiftOFX.h in Headers */ = {isa = PBXBuildFile; fileRef = AA7AABFB1E653F9E00D99296 /* SwiftOFX.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AA7AAC191E65478100D99296 /* FinancialInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7AAC181E65478100D99296 /* FinancialInformation.swift */; };
+		AA7AAC1D1E66005500D99296 /* Date+Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7AAC1C1E66005500D99296 /* Date+Parser.swift */; };
+		AA7AAC1F1E661D1F00D99296 /* MerchantCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7AAC1E1E661D1F00D99296 /* MerchantCategory.swift */; };
+		AA7AAC251E6654A900D99296 /* example.ofx in Resources */ = {isa = PBXBuildFile; fileRef = AA7AAC221E66548A00D99296 /* example.ofx */; };
+		AAC273FD1E75FE97004740E7 /* Tokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC273FC1E75FE97004740E7 /* Tokenizer.swift */; };
+		AAC274011E75FF15004740E7 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC274001E75FF15004740E7 /* Element.swift */; };
+		AADC11791E7F8E4E008C5B52 /* TokenizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADC11781E7F8E4E008C5B52 /* TokenizerTests.swift */; };
+		FDBD222BC90FC70A8A32AB87 /* Pods_SwiftOFX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC846FDB5529FA868947930D /* Pods_SwiftOFX.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,12 +35,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		17AD35D111EFE9B3F2A7D672 /* Pods-SwiftOFX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftOFX.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftOFX/Pods-SwiftOFX.release.xcconfig"; sourceTree = "<group>"; };
+		601626E9BF5DA82936FD735E /* Pods-SwiftOFXTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftOFXTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftOFXTests/Pods-SwiftOFXTests.release.xcconfig"; sourceTree = "<group>"; };
+		A9942534B14F7962CC97C771 /* Pods-SwiftOFX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftOFX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftOFX/Pods-SwiftOFX.debug.xcconfig"; sourceTree = "<group>"; };
+		AA2617091E7E385900F9A80A /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		AA26170B1E7E6A7600F9A80A /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		AA55F93C1E79E9E800835E25 /* Track.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		AA7AABF81E653F9E00D99296 /* SwiftOFX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftOFX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA7AABFB1E653F9E00D99296 /* SwiftOFX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftOFX.h; sourceTree = "<group>"; };
 		AA7AABFC1E653F9E00D99296 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA7AAC011E653F9E00D99296 /* SwiftOFXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftOFXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA7AAC061E653F9E00D99296 /* SwiftOFXTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftOFXTests.swift; sourceTree = "<group>"; };
+		AA7AAC061E653F9E00D99296 /* ParserSystemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParserSystemTests.swift; sourceTree = "<group>"; };
 		AA7AAC081E653F9E00D99296 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA7AAC181E65478100D99296 /* FinancialInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinancialInformation.swift; sourceTree = "<group>"; };
+		AA7AAC1C1E66005500D99296 /* Date+Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Parser.swift"; sourceTree = "<group>"; };
+		AA7AAC1E1E661D1F00D99296 /* MerchantCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MerchantCategory.swift; sourceTree = "<group>"; };
+		AA7AAC221E66548A00D99296 /* example.ofx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = example.ofx; path = Resources/example.ofx; sourceTree = "<group>"; };
+		AAC273FC1E75FE97004740E7 /* Tokenizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tokenizer.swift; sourceTree = "<group>"; };
+		AAC274001E75FF15004740E7 /* Element.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Element.swift; sourceTree = "<group>"; };
+		AADC11781E7F8E4E008C5B52 /* TokenizerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenizerTests.swift; sourceTree = "<group>"; };
+		BE00675836D93E940D5D8AC6 /* Pods-SwiftOFXTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftOFXTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftOFXTests/Pods-SwiftOFXTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E68E9681D0B5552B1E667E15 /* Pods_SwiftOFXTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftOFXTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC846FDB5529FA868947930D /* Pods_SwiftOFX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftOFX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDBD222BC90FC70A8A32AB87 /* Pods_SwiftOFX.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +73,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA7AAC021E653F9E00D99296 /* SwiftOFX.framework in Frameworks */,
+				78C12EB75B620B090FDA3F81 /* Pods_SwiftOFXTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +86,8 @@
 				AA7AABFA1E653F9E00D99296 /* SwiftOFX */,
 				AA7AAC051E653F9E00D99296 /* SwiftOFXTests */,
 				AA7AABF91E653F9E00D99296 /* Products */,
+				FAF30A499AA61CF1110E827D /* Pods */,
+				E11AA2B8178D81FE8D3CCB59 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,6 +105,14 @@
 			children = (
 				AA7AABFB1E653F9E00D99296 /* SwiftOFX.h */,
 				AA7AABFC1E653F9E00D99296 /* Info.plist */,
+				AA2617091E7E385900F9A80A /* Token.swift */,
+				AAC273FC1E75FE97004740E7 /* Tokenizer.swift */,
+				AA26170B1E7E6A7600F9A80A /* Parser.swift */,
+				AA55F93C1E79E9E800835E25 /* Track.swift */,
+				AA7AAC1C1E66005500D99296 /* Date+Parser.swift */,
+				AA7AAC181E65478100D99296 /* FinancialInformation.swift */,
+				AA7AAC1E1E661D1F00D99296 /* MerchantCategory.swift */,
+				AAC274001E75FF15004740E7 /* Element.swift */,
 			);
 			path = SwiftOFX;
 			sourceTree = "<group>";
@@ -80,10 +120,40 @@
 		AA7AAC051E653F9E00D99296 /* SwiftOFXTests */ = {
 			isa = PBXGroup;
 			children = (
-				AA7AAC061E653F9E00D99296 /* SwiftOFXTests.swift */,
+				AA7AAC061E653F9E00D99296 /* ParserSystemTests.swift */,
+				AADC11781E7F8E4E008C5B52 /* TokenizerTests.swift */,
 				AA7AAC081E653F9E00D99296 /* Info.plist */,
+				AA7AAC241E66549200D99296 /* Resources */,
 			);
 			path = SwiftOFXTests;
+			sourceTree = "<group>";
+		};
+		AA7AAC241E66549200D99296 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AA7AAC221E66548A00D99296 /* example.ofx */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		E11AA2B8178D81FE8D3CCB59 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FC846FDB5529FA868947930D /* Pods_SwiftOFX.framework */,
+				E68E9681D0B5552B1E667E15 /* Pods_SwiftOFXTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FAF30A499AA61CF1110E827D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A9942534B14F7962CC97C771 /* Pods-SwiftOFX.debug.xcconfig */,
+				17AD35D111EFE9B3F2A7D672 /* Pods-SwiftOFX.release.xcconfig */,
+				BE00675836D93E940D5D8AC6 /* Pods-SwiftOFXTests.debug.xcconfig */,
+				601626E9BF5DA82936FD735E /* Pods-SwiftOFXTests.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -104,10 +174,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AA7AAC0C1E653F9E00D99296 /* Build configuration list for PBXNativeTarget "SwiftOFX" */;
 			buildPhases = (
+				CF366392702AB8A2A9CAB69F /* [CP] Check Pods Manifest.lock */,
 				AA7AABF31E653F9E00D99296 /* Sources */,
 				AA7AABF41E653F9E00D99296 /* Frameworks */,
 				AA7AABF51E653F9E00D99296 /* Headers */,
 				AA7AABF61E653F9E00D99296 /* Resources */,
+				1386F58C9C1FC5D208A2C917 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -122,9 +194,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AA7AAC0F1E653F9E00D99296 /* Build configuration list for PBXNativeTarget "SwiftOFXTests" */;
 			buildPhases = (
+				752040DE023E16C8F84B3683 /* [CP] Check Pods Manifest.lock */,
 				AA7AABFD1E653F9E00D99296 /* Sources */,
 				AA7AABFE1E653F9E00D99296 /* Frameworks */,
 				AA7AABFF1E653F9E00D99296 /* Resources */,
+				7DDB98C7E4D3AA7F67B2744E /* [CP] Embed Pods Frameworks */,
+				75C7D67927A7D62FAE6F1BB0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -148,6 +223,7 @@
 				TargetAttributes = {
 					AA7AABF71E653F9E00D99296 = {
 						CreatedOnToolsVersion = 8.3;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					AA7AAC001E653F9E00D99296 = {
@@ -186,16 +262,103 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA7AAC251E6654A900D99296 /* example.ofx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1386F58C9C1FC5D208A2C917 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftOFX/Pods-SwiftOFX-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		752040DE023E16C8F84B3683 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		75C7D67927A7D62FAE6F1BB0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftOFXTests/Pods-SwiftOFXTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7DDB98C7E4D3AA7F67B2744E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftOFXTests/Pods-SwiftOFXTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CF366392702AB8A2A9CAB69F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AA7AABF31E653F9E00D99296 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA7AAC191E65478100D99296 /* FinancialInformation.swift in Sources */,
+				AA26170A1E7E385900F9A80A /* Token.swift in Sources */,
+				AA7AAC1D1E66005500D99296 /* Date+Parser.swift in Sources */,
+				AAC273FD1E75FE97004740E7 /* Tokenizer.swift in Sources */,
+				AA26170C1E7E6A7600F9A80A /* Parser.swift in Sources */,
+				AA7AAC1F1E661D1F00D99296 /* MerchantCategory.swift in Sources */,
+				AAC274011E75FF15004740E7 /* Element.swift in Sources */,
+				AA55F93D1E79E9E800835E25 /* Track.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,7 +366,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA7AAC071E653F9E00D99296 /* SwiftOFXTests.swift in Sources */,
+				AA7AAC071E653F9E00D99296 /* ParserSystemTests.swift in Sources */,
+				AADC11791E7F8E4E008C5B52 /* TokenizerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,7 +482,9 @@
 		};
 		AA7AAC0D1E653F9E00D99296 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9942534B14F7962CC97C771 /* Pods-SwiftOFX.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -332,13 +498,16 @@
 				PRODUCT_BUNDLE_IDENTIFIER = brun.steve.SwiftOFX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		AA7AAC0E1E653F9E00D99296 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17AD35D111EFE9B3F2A7D672 /* Pods-SwiftOFX.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -358,7 +527,9 @@
 		};
 		AA7AAC101E653F9E00D99296 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE00675836D93E940D5D8AC6 /* Pods-SwiftOFXTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = SwiftOFXTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
@@ -370,7 +541,9 @@
 		};
 		AA7AAC111E653F9E00D99296 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 601626E9BF5DA82936FD735E /* Pods-SwiftOFXTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = SwiftOFXTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
@@ -399,6 +572,7 @@
 				AA7AAC0E1E653F9E00D99296 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AA7AAC0F1E653F9E00D99296 /* Build configuration list for PBXNativeTarget "SwiftOFXTests" */ = {
 			isa = XCConfigurationList;
@@ -407,6 +581,7 @@
 				AA7AAC111E653F9E00D99296 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
