@@ -1,11 +1,3 @@
-//
-//  Parser.swift
-//  SwiftOFX
-//
-//  Created by Steve Brunwasser on 3/19/17.
-//  Copyright © 2017 Steve Brunwasser. All rights reserved.
-//
-
 import Foundation
 
 func parse(tokens: Tokenizer) -> Element? {

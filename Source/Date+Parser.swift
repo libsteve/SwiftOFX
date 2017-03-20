@@ -1,11 +1,3 @@
-//
-//  DateParser.swift
-//  SwiftOFX
-//
-//  Created by Steve Brunwasser on 2/28/17.
-//  Copyright © 2017 Steve Brunwasser. All rights reserved.
-//
-
 import Foundation
 
 private let formats = [

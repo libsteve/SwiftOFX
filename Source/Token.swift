@@ -1,11 +1,3 @@
-//
-//  Token.swift
-//  SwiftOFX
-//
-//  Created by Steve Brunwasser on 3/18/17.
-//  Copyright © 2017 Steve Brunwasser. All rights reserved.
-//
-
 import Foundation
 
 enum Token {

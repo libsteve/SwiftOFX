@@ -1,11 +1,3 @@
-//
-//  Lexer.swift
-//  SwiftOFX
-//
-//  Created by Steve Brunwasser on 3/12/17.
-//  Copyright © 2017 Steve Brunwasser. All rights reserved.
-//
-
 import Foundation
 import Reggie
 

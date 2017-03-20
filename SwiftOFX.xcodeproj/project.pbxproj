@@ -20,7 +20,6 @@
 		AADC11901E7F9B3E008C5B52 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADC11801E7F9B3E008C5B52 /* Parser.swift */; };
 		AADC11921E7F9B3E008C5B52 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADC11821E7F9B3E008C5B52 /* Token.swift */; };
 		AADC11931E7F9B3E008C5B52 /* Tokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADC11831E7F9B3E008C5B52 /* Tokenizer.swift */; };
-		AADC11941E7F9B3E008C5B52 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADC11841E7F9B3E008C5B52 /* Track.swift */; };
 		AADC11991E7F9B44008C5B52 /* ParserSystemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADC11871E7F9B3E008C5B52 /* ParserSystemTests.swift */; };
 		AADC119A1E7F9B47008C5B52 /* TokenizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADC118A1E7F9B3E008C5B52 /* TokenizerTests.swift */; };
 		AADC11AA1E7F9C39008C5B52 /* SwiftOFX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AADC11A11E7F9C39008C5B52 /* SwiftOFX.framework */; };
@@ -31,11 +30,12 @@
 		AADC11BC1E7F9D1A008C5B52 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADC11801E7F9B3E008C5B52 /* Parser.swift */; };
 		AADC11BD1E7F9D1A008C5B52 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADC11821E7F9B3E008C5B52 /* Token.swift */; };
 		AADC11BE1E7F9D1A008C5B52 /* Tokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADC11831E7F9B3E008C5B52 /* Tokenizer.swift */; };
-		AADC11BF1E7F9D1A008C5B52 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADC11841E7F9B3E008C5B52 /* Track.swift */; };
 		AADC11C01E7F9D20008C5B52 /* ParserSystemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADC11871E7F9B3E008C5B52 /* ParserSystemTests.swift */; };
 		AADC11C11E7F9D20008C5B52 /* TokenizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADC118A1E7F9B3E008C5B52 /* TokenizerTests.swift */; };
 		AADC11C21E7F9D36008C5B52 /* example.ofx in Resources */ = {isa = PBXBuildFile; fileRef = AADC11891E7F9B3E008C5B52 /* example.ofx */; };
 		AADC11C31E7F9D44008C5B52 /* example.ofx in Resources */ = {isa = PBXBuildFile; fileRef = AADC11891E7F9B3E008C5B52 /* example.ofx */; };
+		AADC11CD1E7FAF89008C5B52 /* SwiftOFX.h in Headers */ = {isa = PBXBuildFile; fileRef = AADC11811E7F9B3E008C5B52 /* SwiftOFX.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AADC11CE1E7FAF8E008C5B52 /* SwiftOFX.h in Headers */ = {isa = PBXBuildFile; fileRef = AADC11811E7F9B3E008C5B52 /* SwiftOFX.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B97DF0D424BE0111EE8D966D /* Pods_SwiftOFX_macOS_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B14AEEA2AAEE54CEDDF83E59 /* Pods_SwiftOFX_macOS_Tests.framework */; };
 		FDBD222BC90FC70A8A32AB87 /* Pods_SwiftOFX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC846FDB5529FA868947930D /* Pods_SwiftOFX.framework */; };
 /* End PBXBuildFile section */
@@ -77,7 +77,6 @@
 		AADC11811E7F9B3E008C5B52 /* SwiftOFX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftOFX.h; sourceTree = "<group>"; };
 		AADC11821E7F9B3E008C5B52 /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		AADC11831E7F9B3E008C5B52 /* Tokenizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tokenizer.swift; sourceTree = "<group>"; };
-		AADC11841E7F9B3E008C5B52 /* Track.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		AADC11861E7F9B3E008C5B52 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AADC11871E7F9B3E008C5B52 /* ParserSystemTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserSystemTests.swift; sourceTree = "<group>"; };
 		AADC11891E7F9B3E008C5B52 /* example.ofx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = example.ofx; sourceTree = "<group>"; };
@@ -165,7 +164,6 @@
 				AADC11801E7F9B3E008C5B52 /* Parser.swift */,
 				AADC11821E7F9B3E008C5B52 /* Token.swift */,
 				AADC11831E7F9B3E008C5B52 /* Tokenizer.swift */,
-				AADC11841E7F9B3E008C5B52 /* Track.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -257,6 +255,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AADC11CE1E7FAF8E008C5B52 /* SwiftOFX.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +263,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AADC11CD1E7FAF89008C5B52 /* SwiftOFX.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -596,7 +596,6 @@
 				AADC118C1E7F9B3E008C5B52 /* Element.swift in Sources */,
 				AADC118F1E7F9B3E008C5B52 /* MerchantCategory.swift in Sources */,
 				AADC11901E7F9B3E008C5B52 /* Parser.swift in Sources */,
-				AADC11941E7F9B3E008C5B52 /* Track.swift in Sources */,
 				AADC11931E7F9B3E008C5B52 /* Tokenizer.swift in Sources */,
 				AADC11921E7F9B3E008C5B52 /* Token.swift in Sources */,
 				AADC118B1E7F9B3E008C5B52 /* Date+Parser.swift in Sources */,
@@ -620,7 +619,6 @@
 				AADC11B91E7F9D1A008C5B52 /* Element.swift in Sources */,
 				AADC11BB1E7F9D1A008C5B52 /* MerchantCategory.swift in Sources */,
 				AADC11BC1E7F9D1A008C5B52 /* Parser.swift in Sources */,
-				AADC11BF1E7F9D1A008C5B52 /* Track.swift in Sources */,
 				AADC11BE1E7F9D1A008C5B52 /* Tokenizer.swift in Sources */,
 				AADC11BD1E7F9D1A008C5B52 /* Token.swift in Sources */,
 				AADC11B81E7F9D1A008C5B52 /* Date+Parser.swift in Sources */,

@@ -1,11 +1,3 @@
-//
-//  SwiftOFXTests.swift
-//  SwiftOFXTests
-//
-//  Created by Steve Brunwasser on 2/27/17.
-//  Copyright © 2017 Steve Brunwasser. All rights reserved.
-///Users/steve/Desktop/SwiftOFX/SwiftOFXTests/Resources/example.qfx
-
 import XCTest
 @testable import SwiftOFX
 

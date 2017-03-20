@@ -1,12 +1,4 @@
-//
-//  SwiftOFX.h
-//  SwiftOFX
-//
-//  Created by Steve Brunwasser on 2/27/17.
-//  Copyright © 2017 Steve Brunwasser. All rights reserved.
-//
-
-#import <Cocoa/Cocoa.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for SwiftOFX.
 FOUNDATION_EXPORT double SwiftOFXVersionNumber;
