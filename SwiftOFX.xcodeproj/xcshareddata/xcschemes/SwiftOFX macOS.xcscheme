@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AA7AABF71E653F9E00D99296"
                BuildableName = "SwiftOFX.framework"
-               BlueprintName = "SwiftOFX"
+               BlueprintName = "SwiftOFX macOS"
                ReferencedContainer = "container:SwiftOFX.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -34,7 +34,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AA7AAC001E653F9E00D99296"
                BuildableName = "SwiftOFXTests.xctest"
-               BlueprintName = "SwiftOFXTests"
+               BlueprintName = "SwiftOFX macOS Tests"
                ReferencedContainer = "container:SwiftOFX.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -44,7 +44,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AA7AABF71E653F9E00D99296"
             BuildableName = "SwiftOFX.framework"
-            BlueprintName = "SwiftOFX"
+            BlueprintName = "SwiftOFX macOS"
             ReferencedContainer = "container:SwiftOFX.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -66,7 +66,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AA7AABF71E653F9E00D99296"
             BuildableName = "SwiftOFX.framework"
-            BlueprintName = "SwiftOFX"
+            BlueprintName = "SwiftOFX macOS"
             ReferencedContainer = "container:SwiftOFX.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -84,7 +84,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AA7AABF71E653F9E00D99296"
             BuildableName = "SwiftOFX.framework"
-            BlueprintName = "SwiftOFX"
+            BlueprintName = "SwiftOFX macOS"
             ReferencedContainer = "container:SwiftOFX.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
