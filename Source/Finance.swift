@@ -15,10 +15,14 @@ protocol Information {
 
 public typealias Identifier = String
 
+/// Information about the entity which provided the OFX file.
 public struct Institute: Information {
   static let label: String = "FI"
 
+  /// The name of the institution.
   public var name: String
+
+  /// An identifier for this specific institution.
   public var id: Identifier
 
   init?(parent element: Element) {
@@ -28,12 +32,18 @@ public struct Institute: Information {
   }
 }
 
+/// Information about the method through which the OFX file was obtained.
 public struct Session: Information {
   static let label: String = "SONRS"
 
 //  var status: String // STATUS
+
+  /// The date that the OFX file was obtained.
   public var date: Date
+
 //  var language: Strng // LANGUAGE
+
+  /// The institute that provided the OFX file.
   public var institute: Institute
 
   init?(parent element: Element) {
@@ -46,12 +56,20 @@ public struct Session: Information {
   }
 }
 
+/// The login information used to obtain the OFX file.
 public struct Account: Information {
   static let label: String = "ACCTINFO"
 
+  /// A description of the account.
   public var description: String
+
+  /// An account's login identifier.
   public var identifier: Identifier
+
+  /// The identifier of the bank/institution to which this account belongs.
   public var bank: Identifier?
+
+  /// The type of this account login.
   public var type: String?
 
   init?(parent element: Element) {
@@ -78,17 +96,35 @@ extension Array where Element == Account {
   }
 }
 
+/// A specific exchange of finances from accounts.
 public struct Transaction: Information {
   static let label: String = "STMTTRN"
 
+  /// The method used to facilitate this transaction.
   public var type: String
+
+  /// The date this transaction occured.
   public var date: Date
+
+  /// The amount of money exchanged through this transaction.
   public var amount: Double
+
+  /// A unique identifier for this transaction.
   public var identifier: Identifier
+
+  /// A description for the transaction.
   public var description: String
+
+  /// The recipient of the money from this transaction.
   public var payee: String?
+
+  /// A description for the transaction.
   public var memo: String?
+
+  /// An official categorization for this transaction.
   public var category: MerchantCategoryCode?
+
+  /// The identifying number for the check through which this transaction was facilitated.
   public var check: Int?
 
   init?(parent element: Element) {
@@ -115,11 +151,17 @@ public struct Transaction: Information {
   }
 }
 
+/// A collection of transactions between specified dates.
 public struct Statement: Information {
   static let label: String = "BANKTRANLIST"
 
+  /// The earliest date a transaction on this statement could have occured.
   public var start: Date
+
+  /// The lastest date a transaction on this statement could have occured.
   public var end: Date
+
+  /// A collection of all transactions for this statement's period.
   public var transactions: [Transaction]
 
   init?(parent element: Element) {
@@ -137,15 +179,29 @@ public struct Statement: Information {
   }
 }
 
+/// Information pertaining to a Bank Account.
 public struct BankAccount: Information {
   static let label: String = "STMTTRNRS"
 
+  /// The kind of currency used with this account.
   public var currency: String
+
+  /// An identifier indicating which bank this account belongs to.
   public var bank: Identifier
+
+  /// An identifier for this account.
   public var account: Identifier
+
+  /// The type of this bank account. (i.e. Checking, Credit, etc.)
   public var type: String
+
+  /// The amount of money remaining within the account.
   public var balance: Double
+
+  /// The date that this information was last updated.
   public var date: Date
+
+  /// The account statement and transactions.
   public var statement: Statement
 
   init?(parent element: Element) {
@@ -183,15 +239,26 @@ extension Array where Element == BankAccount {
   }
 }
 
+/// Information pertaining to a Credit Card Account.
 public struct CreditAccount: Information {
   static let label: String = "CCSTMTTRNRS"
 
+  /// The kind of currency used with this account.
   public var currency: String
+
+  /// An identifier for this account.
   public var account: Identifier
+
+  /// The amount of money remaining within the account.
   public var balance: Double
+
+  /// The date that this information was last updated.
   public var date: Date
+
 //  var remainingCredit: Double
 //  var remainingCreditDate: Date
+
+  /// The account statement and transactions.
   public var statement: Statement
 
   init?(parent element: Element) {
@@ -225,12 +292,20 @@ extension Array where Element == CreditAccount {
   }
 }
 
+/// The collection of relevant information held within an OFX file.
 public struct Finance: Information {
   static let label: String = "OFX"
 
+  /// Information about the session from which the OFX file came.
   public var session: Session
+
+  /// Information about the login accounts relevant to the OFX file.
   public var accounts: [Account]
+
+  /// Information about bank accounts from the OFX file.
   public var bankAccounts: [BankAccount]
+
+  /// Information about credit card accounts from the OFX file.
   public var creditAccounts: [CreditAccount]
 
   init?(parent element: Element) {
@@ -247,6 +322,8 @@ public struct Finance: Information {
     self.creditAccounts = Array<CreditAccount>.init(parent: element) ?? []
   }
 
+  /// Gather the financial information from the data of an OFX file.
+  /// - parameter data: A data object containing OFX formatted information.
   public init?(data: Data) {
     var iterator = data.makeIterator()
     
@@ -255,6 +332,8 @@ public struct Finance: Information {
     self.init(element: element)
   }
 
+  /// Gather the financial information from the OFX file at the given path.
+  /// - parameter path: The file path to an OFX file.
   public init?(file path: String) {
     guard let data = FileManager.default.contents(atPath: path) else { return nil }
     self.init(data: data)
