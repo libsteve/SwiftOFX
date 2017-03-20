@@ -19,7 +19,7 @@ institutions can export account information in this file format.
 
 ## Installation
 
-Reggie is available through [CocoaPods](http://cocoapods.org). 
+SwiftOFX is available through [CocoaPods](http://cocoapods.org). 
 To install it, simply add the following line to your Podfile:
 
 ```ruby
