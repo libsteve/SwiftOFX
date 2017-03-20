@@ -14,7 +14,7 @@
 		AA7AAC021E653F9E00D99296 /* SwiftOFX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA7AABF81E653F9E00D99296 /* SwiftOFX.framework */; };
 		AADC118B1E7F9B3E008C5B52 /* Date+Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADC117B1E7F9B3E008C5B52 /* Date+Parser.swift */; };
 		AADC118C1E7F9B3E008C5B52 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADC117C1E7F9B3E008C5B52 /* Element.swift */; };
-		AADC118D1E7F9B3E008C5B52 /* FinancialInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADC117D1E7F9B3E008C5B52 /* FinancialInformation.swift */; };
+		AADC118D1E7F9B3E008C5B52 /* Finance.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADC117D1E7F9B3E008C5B52 /* Finance.swift */; };
 		AADC118E1E7F9B3E008C5B52 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AADC117E1E7F9B3E008C5B52 /* Info.plist */; };
 		AADC118F1E7F9B3E008C5B52 /* MerchantCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADC117F1E7F9B3E008C5B52 /* MerchantCategory.swift */; };
 		AADC11901E7F9B3E008C5B52 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADC11801E7F9B3E008C5B52 /* Parser.swift */; };
@@ -26,7 +26,7 @@
 		AADC11AA1E7F9C39008C5B52 /* SwiftOFX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AADC11A11E7F9C39008C5B52 /* SwiftOFX.framework */; };
 		AADC11B81E7F9D1A008C5B52 /* Date+Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADC117B1E7F9B3E008C5B52 /* Date+Parser.swift */; };
 		AADC11B91E7F9D1A008C5B52 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADC117C1E7F9B3E008C5B52 /* Element.swift */; };
-		AADC11BA1E7F9D1A008C5B52 /* FinancialInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADC117D1E7F9B3E008C5B52 /* FinancialInformation.swift */; };
+		AADC11BA1E7F9D1A008C5B52 /* Finance.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADC117D1E7F9B3E008C5B52 /* Finance.swift */; };
 		AADC11BB1E7F9D1A008C5B52 /* MerchantCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADC117F1E7F9B3E008C5B52 /* MerchantCategory.swift */; };
 		AADC11BC1E7F9D1A008C5B52 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADC11801E7F9B3E008C5B52 /* Parser.swift */; };
 		AADC11BD1E7F9D1A008C5B52 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADC11821E7F9B3E008C5B52 /* Token.swift */; };
@@ -70,7 +70,7 @@
 		AA7AAC011E653F9E00D99296 /* SwiftOFXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftOFXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AADC117B1E7F9B3E008C5B52 /* Date+Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Parser.swift"; sourceTree = "<group>"; };
 		AADC117C1E7F9B3E008C5B52 /* Element.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Element.swift; sourceTree = "<group>"; };
-		AADC117D1E7F9B3E008C5B52 /* FinancialInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinancialInformation.swift; sourceTree = "<group>"; };
+		AADC117D1E7F9B3E008C5B52 /* Finance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Finance.swift; sourceTree = "<group>"; };
 		AADC117E1E7F9B3E008C5B52 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AADC117F1E7F9B3E008C5B52 /* MerchantCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MerchantCategory.swift; sourceTree = "<group>"; };
 		AADC11801E7F9B3E008C5B52 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
@@ -160,7 +160,7 @@
 				AADC117E1E7F9B3E008C5B52 /* Info.plist */,
 				AADC117B1E7F9B3E008C5B52 /* Date+Parser.swift */,
 				AADC117C1E7F9B3E008C5B52 /* Element.swift */,
-				AADC117D1E7F9B3E008C5B52 /* FinancialInformation.swift */,
+				AADC117D1E7F9B3E008C5B52 /* Finance.swift */,
 				AADC117F1E7F9B3E008C5B52 /* MerchantCategory.swift */,
 				AADC11801E7F9B3E008C5B52 /* Parser.swift */,
 				AADC11821E7F9B3E008C5B52 /* Token.swift */,
@@ -600,7 +600,7 @@
 				AADC11931E7F9B3E008C5B52 /* Tokenizer.swift in Sources */,
 				AADC11921E7F9B3E008C5B52 /* Token.swift in Sources */,
 				AADC118B1E7F9B3E008C5B52 /* Date+Parser.swift in Sources */,
-				AADC118D1E7F9B3E008C5B52 /* FinancialInformation.swift in Sources */,
+				AADC118D1E7F9B3E008C5B52 /* Finance.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -624,7 +624,7 @@
 				AADC11BE1E7F9D1A008C5B52 /* Tokenizer.swift in Sources */,
 				AADC11BD1E7F9D1A008C5B52 /* Token.swift in Sources */,
 				AADC11B81E7F9D1A008C5B52 /* Date+Parser.swift in Sources */,
-				AADC11BA1E7F9D1A008C5B52 /* FinancialInformation.swift in Sources */,
+				AADC11BA1E7F9D1A008C5B52 /* Finance.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

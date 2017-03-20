@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct MerchantCategoryCode {
-  let code: String
-  let merchant: String
+public struct MerchantCategoryCode {
+  public let code: String
+  public let merchant: String
 
   init?(string code: String) {
     guard let merchant = merchantCategories[code] else { return nil }
@@ -20,12 +20,13 @@ struct MerchantCategoryCode {
 }
 
 extension MerchantCategoryCode: CustomStringConvertible {
-  var description: String {
+  public var description: String {
     return "\(code) : \(merchant)"
   }
 }
 
-// Merchant Category Codes are sourced from http://mcc-codes.findthecompany.com
+// Merchant Category Codes are sourced from
+// https://github.com/aasmith/ofx-parser/blob/9d150076ec641757208642725cd1dbf75f5fa437/lib/mcc.rb
 private let merchantCategories = [
   "0742" : "VETERINARY SERVICES",
   "0763" : "AGRICULTURAL COOPERATIVES",

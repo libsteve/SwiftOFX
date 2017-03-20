@@ -19,8 +19,8 @@ class ParserSystemTests: XCTestCase {
     data = FileManager.default.contents(atPath: path)!
   }
 
-  func testFinancialInformation() {
-    let information = FinancialInformation(data: data)
+  func testFinance() {
+    let information = Finance(data: data)
     XCTAssertNotNil(information, "The OFX data should be properly parsed.")
 
     guard let info = information else { return }

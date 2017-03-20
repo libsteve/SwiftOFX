@@ -13,13 +13,13 @@ protocol Information {
   init?(parent element: Element)
 }
 
-typealias Identifier = String
+public typealias Identifier = String
 
-struct Institute: Information {
+public struct Institute: Information {
   static let label: String = "FI"
 
-  var name: String
-  var id: Identifier
+  public var name: String
+  public var id: Identifier
 
   init?(parent element: Element) {
     guard let element = element[Institute.label] else { return nil }
@@ -28,13 +28,13 @@ struct Institute: Information {
   }
 }
 
-struct Session: Information {
+public struct Session: Information {
   static let label: String = "SONRS"
 
 //  var status: String // STATUS
-  var date: Date
+  public var date: Date
 //  var language: Strng // LANGUAGE
-  var institute: Institute
+  public var institute: Institute
 
   init?(parent element: Element) {
     guard
@@ -46,13 +46,13 @@ struct Session: Information {
   }
 }
 
-struct Account: Information {
+public struct Account: Information {
   static let label: String = "ACCTINFO"
 
-  var description: String
-  var identifier: Identifier
-  var bank: Identifier?
-  var type: String?
+  public var description: String
+  public var identifier: Identifier
+  public var bank: Identifier?
+  public var type: String?
 
   init?(parent element: Element) {
     guard let element = element[Account.label] else { return nil }
@@ -78,18 +78,18 @@ extension Array where Element == Account {
   }
 }
 
-struct Transaction: Information {
+public struct Transaction: Information {
   static let label: String = "STMTTRN"
 
-  var type: String
-  var date: Date
-  var amount: Double
-  var identifier: Identifier
-  var description: String
-  var payee: String?
-  var memo: String?
-  var category: MerchantCategoryCode?
-  var check: Int?
+  public var type: String
+  public var date: Date
+  public var amount: Double
+  public var identifier: Identifier
+  public var description: String
+  public var payee: String?
+  public var memo: String?
+  public var category: MerchantCategoryCode?
+  public var check: Int?
 
   init?(parent element: Element) {
     guard let element = element[Transaction.label] else { return nil }
@@ -115,12 +115,12 @@ struct Transaction: Information {
   }
 }
 
-struct Statement: Information {
+public struct Statement: Information {
   static let label: String = "BANKTRANLIST"
 
-  var start: Date
-  var end: Date
-  var transactions: [Transaction]
+  public var start: Date
+  public var end: Date
+  public var transactions: [Transaction]
 
   init?(parent element: Element) {
     guard
@@ -137,16 +137,16 @@ struct Statement: Information {
   }
 }
 
-struct BankAccount: Information {
+public struct BankAccount: Information {
   static let label: String = "STMTTRNRS"
 
-  var currency: String
-  var bank: Identifier
-  var account: Identifier
-  var type: String
-  var balance: Double
-  var date: Date
-  var statement: Statement
+  public var currency: String
+  public var bank: Identifier
+  public var account: Identifier
+  public var type: String
+  public var balance: Double
+  public var date: Date
+  public var statement: Statement
 
   init?(parent element: Element) {
     guard let element = element[BankAccount.label] else { return nil }
@@ -183,16 +183,16 @@ extension Array where Element == BankAccount {
   }
 }
 
-struct CreditAccount: Information {
+public struct CreditAccount: Information {
   static let label: String = "CCSTMTTRNRS"
 
-  var currency: String
-  var account: Identifier
-  var balance: Double
-  var date: Date
+  public var currency: String
+  public var account: Identifier
+  public var balance: Double
+  public var date: Date
 //  var remainingCredit: Double
 //  var remainingCreditDate: Date
-  var statement: Statement
+  public var statement: Statement
 
   init?(parent element: Element) {
     guard let element = element[CreditAccount.label] else { return nil }
@@ -225,16 +225,16 @@ extension Array where Element == CreditAccount {
   }
 }
 
-struct FinancialInformation: Information {
+public struct Finance: Information {
   static let label: String = "OFX"
 
-  var session: Session
-  var accounts: [Account]
-  var bankAccounts: [BankAccount]
-  var creditAccounts: [CreditAccount]
+  public var session: Session
+  public var accounts: [Account]
+  public var bankAccounts: [BankAccount]
+  public var creditAccounts: [CreditAccount]
 
   init?(parent element: Element) {
-    guard let element = element[FinancialInformation.label] else { return nil }
+    guard let element = element[Finance.label] else { return nil }
     self.init(element: element)
   }
 
