@@ -19,4 +19,3 @@ Most banking institutions can export account information in this file format.
 
   s.source_files = 'Source/**/*.swift'
 end
-

@@ -33,4 +33,3 @@ Steven Brunwasser, sbrunwasser@gmail.com
 ## License
 
 SwiftOFX is available under the MIT license. See the LICENSE file for more info.
-
