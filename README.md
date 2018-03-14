@@ -10,12 +10,13 @@
 SwiftOFX is a framework for reading and making sense of data from [Open Finance Exchange (OFX)][ofx.net] files.
 
 OFX files contain account, statement, and transaction information from financial institutions. Most banking
-institutions can export account information in this file format.
+institutions can export account information in this file format&mdash;encoded using an [SGML][sgml-wiki]-like document format.
 
 [See the Wikipedia page][ofx-wiki] for more information.
 
 [ofx.net]: http://www.ofx.net
 [ofx-wiki]: https://en.wikipedia.org/wiki/Open_Financial_Exchange
+[sgml-wiki]: https://en.wikipedia.org/wiki/Standard_Generalized_Markup_Language
 
 ## Installation
 
