@@ -1,7 +1,7 @@
 target 'SwiftOFX macOS' do
   use_frameworks!
 
-  pod 'Reggie', :git => 'https://github.com/Altece/Reggie.git'
+  pod 'Reggie'
 
   target 'SwiftOFX macOS Tests' do
     inherit! :search_paths
@@ -11,7 +11,7 @@ end
 target 'SwiftOFX iOS' do
   use_frameworks!
 
-  pod 'Reggie', :git => 'https://github.com/Altece/Reggie.git'
+  pod 'Reggie'
 
   target 'SwiftOFX iOS Tests' do
     inherit! :search_paths

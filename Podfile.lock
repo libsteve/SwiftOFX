@@ -1,21 +1,12 @@
 PODS:
-  - Reggie (0.1.0)
+  - Reggie (0.2.1)
 
 DEPENDENCIES:
-  - Reggie (from `https://github.com/Altece/Reggie.git`)
-
-EXTERNAL SOURCES:
-  Reggie:
-    :git: https://github.com/Altece/Reggie.git
-
-CHECKOUT OPTIONS:
-  Reggie:
-    :commit: 138818fa36bf06d82c7c7836546f442fc5212f58
-    :git: https://github.com/Altece/Reggie.git
+  - Reggie
 
 SPEC CHECKSUMS:
-  Reggie: 809f72b1afa79097fd422e69c1fa215938947129
+  Reggie: 8d057ad0fdaa508ff8f2b7f79f4e3591a03cb374
 
-PODFILE CHECKSUM: c2985c071f9d61e79a44b9ce7de215eecd00a645
+PODFILE CHECKSUM: a03d540581effd42f0c17acb4d79d39477220140
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.4.0

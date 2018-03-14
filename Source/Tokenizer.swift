@@ -5,14 +5,14 @@ struct Tokenizer: IteratorProtocol {
   private var lexer: Lexer<UnicodeScalar>
   private var readingBody: Bool = false
 
-  private static let bodyTokenizers: [(Automata<NFA<UnicodeScalar>>, (String) -> Token)] = [
+  private static let bodyTokenizers: [(NFA<UnicodeScalar>, (String) -> Token)] = [
     (openTag, {
-      let characters = $0.characters.dropFirst().dropLast()
+      let characters = $0.dropFirst().dropLast()
       let result = String(characters).trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
       return .openTag(result)
     }),
     (closeTag, {
-      let characters = $0.characters.dropFirst().dropFirst().dropLast()
+      let characters = $0.dropFirst().dropFirst().dropLast()
       let result = String(characters).trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
       return .closeTag(result)
     }),
@@ -55,50 +55,58 @@ extension String {
 
 // MARK: - Lexing Automata
 
-private let header: Automata<NFA<UnicodeScalar>> = {
-  let final = NFA<UnicodeScalar>(terminal: true)
-  var s3 = NFA<UnicodeScalar>(transition: Transition(to: final) { $0 == UnicodeScalar("\n") })
-  var s2 = NFA<UnicodeScalar>(transitions: Transition(to: s3) { $0 == UnicodeScalar("\r") },
-                                           Transition(to: final) { $0 == UnicodeScalar("\n") })
-  var s1 = NFA<UnicodeScalar>(transition: Transition(to: s2) { $0 == UnicodeScalar(":") })
-  var root = NFA<UnicodeScalar>()
-  let fn: (UnicodeScalar) -> Bool  = { !CharacterSet(charactersIn: "<>:\r\n").contains($0) }
-  s2.transition(to: s2, over: fn)
-  s1.transition(to: s1, over: fn)
-  root.transition(to: s1, over: fn)
-  return Automata(root: root)
+private let header: NFA<UnicodeScalar> = {
+  var nfa = NFA<UnicodeScalar>()
+  let s1 = State(), s2 = State(), s3 = State(), final = State()
+  nfa.mark(final, as: .terminating)
+  nfa.transition(from: s3, to: final) { _ in true }
+  nfa.transition(from: s2, to: s3) { $0 == UnicodeScalar("\r") }
+  nfa.transition(from: s2, to: final) { $0 == UnicodeScalar("\n") }
+  nfa.transition(from: s1, to: s2) { $0 == UnicodeScalar(":") }
+  let fn: (UnicodeScalar) -> Bool = { !CharacterSet(charactersIn: "<>:\r\n").contains($0) }
+  nfa.transition(from: s2, to: s2, over: fn)
+  nfa.transition(from: s1, to: s1, over: fn)
+  nfa.transition(from: nfa.root, to: s1, over: fn)
+  return nfa
 }()
 
-private let openTag: Automata<NFA<UnicodeScalar>> = {
-  let final = NFA<UnicodeScalar>(terminal: true)
-  var inner = NFA<UnicodeScalar>(transition: Transition(to: final) { $0 == UnicodeScalar(">") })
-  let root = NFA<UnicodeScalar>(transition: Transition(to: inner) { $0 == UnicodeScalar("<") })
-  inner.transition(to: inner) { !CharacterSet(charactersIn: "</>").contains($0) }
-  return Automata(root: root)
+private let openTag: NFA<UnicodeScalar> = {
+  var nfa = NFA<UnicodeScalar>()
+  let inner = State(), final = State()
+  nfa.mark(final, as: .terminating)
+  nfa.transition(from: nfa.root, to: inner) { $0 == UnicodeScalar("<") }
+  nfa.transition(from: inner, to: inner) { !CharacterSet(charactersIn: "</>").contains($0) }
+  nfa.transition(from: inner, to: final) { $0 == UnicodeScalar(">") }
+  return nfa
 }()
 
-private let closeTag: Automata<NFA<UnicodeScalar>> = {
-  let final = NFA<UnicodeScalar>(terminal: true)
-  var s2 = NFA<UnicodeScalar>(transition: Transition(to: final) { $0 == UnicodeScalar(">") })
-  let s1 = NFA<UnicodeScalar>(transition: Transition(to: s2) { $0 == UnicodeScalar("/") })
-  let root = NFA<UnicodeScalar>(transition: Transition(to: s1) { $0 == UnicodeScalar("<") })
-  s2.transition(to: s2) { !CharacterSet(charactersIn: "</>").contains($0) }
-  return Automata(root: root)
+private let closeTag: NFA<UnicodeScalar> = {
+  var nfa = NFA<UnicodeScalar>()
+  let s1 = State(), s2 = State(), final = State()
+  nfa.mark(final, as: .terminating)
+  nfa.transition(from: nfa.root, to: s1) { $0 == UnicodeScalar("<") }
+  nfa.transition(from: s1, to: s2) { $0 == UnicodeScalar("/") }
+  nfa.transition(from: s2, to: s2) { !CharacterSet(charactersIn: "</>").contains($0) }
+  nfa.transition(from: s2, to: final) { $0 == UnicodeScalar(">") }
+  return nfa
 }()
 
-private let newline: Automata<NFA<UnicodeScalar>> = {
-  let final = NFA<UnicodeScalar>(terminal: true)
-  let middle = NFA<UnicodeScalar>(transitions: Transition(to: final) { $0 == UnicodeScalar("\n") })
-  let root = NFA<UnicodeScalar>(transitions: Transition(to: final) { $0 == UnicodeScalar("\n") },
-                                             Transition(to: middle) { $0 == UnicodeScalar("\r") })
-  return Automata(root: root)
+private let newline: NFA<UnicodeScalar> = {
+    var nfa = NFA<UnicodeScalar>()
+    let middle = State(), final = State()
+    nfa.mark(final, as: .terminating)
+    nfa.transition(from: nfa.root, to: middle) { $0 == UnicodeScalar("\r") }
+    nfa.transition(from: nfa.root, to: final) { $0 == UnicodeScalar("\n") }
+    nfa.transition(from: middle, to: final) { $0 == UnicodeScalar("\n") }
+    return nfa
 }()
 
-private let content: Automata<NFA<UnicodeScalar>> = {
-  var final = NFA<UnicodeScalar>(terminal: true)
-  var root = NFA<UnicodeScalar>()
-  let t = Transition(to: final) { !CharacterSet(charactersIn: "<>\r\n").contains($0) }
-  final.add(transition: t)
-  root.add(transition: t)
-  return Automata(root: root)
+private let content: NFA<UnicodeScalar> = {
+    var nfa = NFA<UnicodeScalar>()
+    let final = State()
+    nfa.mark(final, as: .terminating)
+    let fn: (UnicodeScalar) -> Bool = { !CharacterSet(charactersIn: "<>\r\n").contains($0) }
+    nfa.transition(from: nfa.root, to: final, over: fn)
+    nfa.transition(from: final, to: final, over: fn)
+    return nfa
 }()
