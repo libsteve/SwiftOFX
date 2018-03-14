@@ -1,5 +1,9 @@
 import Foundation
 
+/// A recursive-descent parsing function that can create a tree of OXF elements from using tokens
+/// provided by the given `Tokenizer`.
+/// - parameter tokens: A `Tokenizer` instance access individual pieces of information that together
+///                     represent the raw contents of an OFX file.
 func parse(tokens: Tokenizer) -> Element? {
   var tokens = tokens
   var stack: [Element] = []

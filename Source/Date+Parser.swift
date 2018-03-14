@@ -1,5 +1,6 @@
 import Foundation
 
+/// The possible date formats that an OFX file can contain.
 private let formats = [
   "YYYYMMDDhhmmss.XXX[ZZ:zzz]",
   "YYYYMMDDhhmmss.XXX",
@@ -14,7 +15,7 @@ private let formats = [
 ]
 
 extension Date {
-
+  /// Create a data instance from some OFX-originated string data that should represent a date.
   internal init?(string: String) {
     guard string != "" else { return nil }
     let formatter = DateFormatter()

@@ -43,7 +43,7 @@ struct Tokenizer: IteratorProtocol {
   }
 }
 
-/// MARK: - String Unicode Scalar Initializer
+// MARK: - String Unicode Scalar Initializer
 
 extension String {
   init<S: Sequence>(_ unicodeScalars: S) where UnicodeScalar == S.Iterator.Element {

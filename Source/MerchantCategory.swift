@@ -1,7 +1,11 @@
 import Foundation
 
+/// A structure representing the type of establishment where a given transaction occurred.
 public struct MerchantCategoryCode {
+  /// The OFX-specific four-digit code for the merchant category.
   public let code: String
+
+  /// An description for the type of establishment represented by the merchant category code.
   public let merchant: String
 
   init?(string code: String) {

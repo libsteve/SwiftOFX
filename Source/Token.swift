@@ -1,10 +1,20 @@
 import Foundation
 
+/// The representation of a raw unit of information from an OFX file.
 enum Token {
+  /// A key-value pair from the OFX file's header section.
   case header(key: String, value: String)
+
+  /// A marker representing the beginning of some tagged nested data.
   case openTag(String)
+
+  /// A marker representing the end of some tagged nested data section.
   case closeTag(String)
+
+  /// The end of a line of text.
   case newline
+
+  /// Raw text data within a header or tagged section.
   case content(String)
 }
 
@@ -22,6 +32,7 @@ extension Token: Equatable {
 }
 
 extension Token {
+  /// - note: This is an overload of the comparitor operator used by `case` statements.
   static func ~= (pattern: Token, sample: Token) -> Bool {
     switch (pattern, sample) {
     case (.header(key: _, value: _), .header(key: _, value: _)),

@@ -1,10 +1,17 @@
 import Foundation
 
+/// A contract for any type which represents some parsable OFX data.
 protocol Information {
+  /// The OFX tag that denotes this type of information.
   static var label: String { get }
+
+  /// A method of constructing an instance of this information structure from within an OFX element.
+  /// - parameter element: An OFX element containing sub-elements, of which only one represents
+  ///                      the data necessary to create an instance of this information structure.
   init?(parent element: Element)
 }
 
+/// A type alias to semantically specify some identity.
 public typealias Identifier = String
 
 /// Information about the entity which provided the OFX file.
@@ -30,7 +37,7 @@ public struct Session: Information {
 
 //  var status: String // STATUS
 
-  /// The date that the OFX file was obtained.
+  /// The date when the OFX file was obtained.
   public var date: Date
 
 //  var language: Strng // LANGUAGE
@@ -55,10 +62,10 @@ public struct Account: Information {
   /// A description of the account.
   public var description: String
 
-  /// An account's login identifier.
+  /// An account's login identifier associated with the logged in user's username.
   public var identifier: Identifier
 
-  /// The identifier of the bank/institution to which this account belongs.
+  /// The identifier of the bank or institution to which this account belongs.
   public var bank: Identifier?
 
   /// The type of this account login.
@@ -69,6 +76,9 @@ public struct Account: Information {
     self.init(element: element)
   }
 
+  /// Create an `Account` data structure using information within the given OFX element.
+  /// - parameter element: An OFX element that contains all necessary data needed to build an
+  ///                      an `Account` structure.
   init?(element: Element) {
     guard let identifier = element["ACCTID"]?.content else { return nil }
     self.identifier = identifier
@@ -79,6 +89,9 @@ public struct Account: Information {
 }
 
 extension Array where Element == Account {
+  /// Create an array of sequential `Account` data structures within the given OFX element.
+  /// - parameter element: An OFX element containing multiple sub-elements, many of which contain
+  ///                      the data necessary to create an `Account ` structure.
   init?(parent element: SwiftOFX.Element) {
     guard let element = element["ACCTINFOTRNRS"] else { return nil }
     self = element.children.filter { $0.name == Account.label }.reduce([]) { collection, element in
@@ -88,7 +101,7 @@ extension Array where Element == Account {
   }
 }
 
-/// A specific exchange of finances from accounts.
+/// A specific exchange of finances from accounts, such as a purchase, loan payment, deposit, etc.
 public struct Transaction: Information {
   static let label: String = "STMTTRN"
 
@@ -124,6 +137,9 @@ public struct Transaction: Information {
     self.init(element: element)
   }
 
+  /// Create a `Transaction` data structure using information within the given OFX element.
+  /// - parameter element: An OFX element that contains all necessary data needed to build an
+  ///                      a `Transaction` structure.
   init?(element: Element) {
     guard
       let type = element["TRNTYPE"]?.content,
@@ -181,7 +197,7 @@ public struct BankAccount: Information {
   /// An identifier indicating which bank this account belongs to.
   public var bank: Identifier
 
-  /// An identifier for this account.
+  /// An identifier for this account, such as the specific account number.
   public var account: Identifier
 
   /// The type of this bank account. (i.e. Checking, Credit, etc.)
@@ -201,6 +217,9 @@ public struct BankAccount: Information {
     self.init(element: element)
   }
 
+  /// Create a `BankAccount` data structure using information within the given OFX element.
+  /// - parameter element: An OFX element that contains all necessary data needed to build an
+  ///                      a `BankAccount` structure.
   init?(element: Element) {
     guard
       let currency = element["STMTRS", "CURDEF"]?.content,
@@ -221,6 +240,9 @@ public struct BankAccount: Information {
 }
 
 extension Array where Element == BankAccount {
+  /// Create an array of sequential `BankAccount` data structures within the given OFX element.
+  /// - parameter element: An OFX element containing multiple sub-elements, many of which contain
+  ///                      the data necessary to create a `BankAccount ` structure.
   init?(parent element: SwiftOFX.Element) {
     guard let element = element["BANKMSGSRSV1"] else { return nil }
     self =
@@ -258,6 +280,9 @@ public struct CreditAccount: Information {
     self.init(element: element)
   }
 
+  /// Create a `CreditAccount` data structure using information within the given OFX element.
+  /// - parameter element: An OFX element that contains all necessary data needed to build an
+  ///                      a `CreditAccount` structure.
   init?(element: Element) {
     guard
       let currency = element["CCSTMTRS", "CURDEF"]?.content,
@@ -274,6 +299,9 @@ public struct CreditAccount: Information {
 }
 
 extension Array where Element == CreditAccount {
+  /// Create an array of sequential `CreditAccount` data structures within the given OFX element.
+  /// - parameter element: An OFX element containing multiple sub-elements, many of which contain
+  ///                      the data necessary to create a `CreditAccount ` structure.
   init?(parent element: SwiftOFX.Element) {
     guard let element = element["CREDITCARDMSGSRSV1"] else { return nil }
     self =
@@ -284,7 +312,7 @@ extension Array where Element == CreditAccount {
   }
 }
 
-/// The collection of relevant information held within an OFX file.
+/// A collection of all relevant information held within an OFX file.
 public struct Finance: Information {
   static let label: String = "OFX"
 
@@ -305,6 +333,9 @@ public struct Finance: Information {
     self.init(element: element)
   }
 
+  /// Create an array of sequential `Finance` data structures within the given OFX element.
+  /// - parameter element: An OFX element containing multiple sub-elements, many of which contain
+  ///                      the data necessary to create a `Finance ` structure.
   init?(element: Element) {
     guard let session = element["SIGNONMSGSRSV1", "SONRS"].flatMap({ Session(parent: $0) })
       else { return nil }
