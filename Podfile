@@ -1,5 +1,6 @@
 target 'SwiftOFX macOS' do
   use_frameworks!
+  platform :osx, '10.10'
 
   pod 'Reggie'
 
@@ -10,6 +11,7 @@ end
 
 target 'SwiftOFX iOS' do
   use_frameworks!
+  platform :ios, '8.0'
 
   pod 'Reggie'
 
